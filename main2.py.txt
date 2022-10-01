@@ -1,0 +1,21 @@
+import Interestfunct
+import getpass
+import password
+
+def mainfunct(event,context):
+    principle = os.environ['principle']
+    rate = os.environ['rate']
+    time= os.environ['time']
+    user = os.environ['user']
+    password.Username_verification(user)
+    #print(password.Username_verification(user))
+    if(password.Username_verification(user)==1):
+        print("Enter Your Password")
+        #password1 = getpass.getpass()
+        password1 = os.environ['password']
+        password.password_verification(password1)
+        if(password.password_verification(password1)==1):
+            CI = Interestfunct.compound_interest(principle, rate, time)
+            print("Compound interest is", CI)
+    else:
+        print("Sorry")
